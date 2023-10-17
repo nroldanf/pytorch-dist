@@ -1,0 +1,25 @@
+Region: us-east-1
+Image:
+  Os: alinux2
+HeadNode:
+  InstanceType: t3.medium
+  Networking:
+    SubnetId: subnet-025b3ce67d435f688
+  Ssh:
+    KeyName: da-specialty
+  Imds:
+    Secured: false
+Scheduling:
+  Scheduler: awsbatch
+  AwsBatchQueues:
+  - Name: train
+    ComputeResources:
+    - Name: g4dnxlarge
+      InstanceTypes:
+      - g4dn.xlarge
+      MinvCpus: 0
+      DesiredvCpus: 0
+      MaxvCpus: 10
+    Networking:
+      SubnetIds:
+      - subnet-0402d3f9e3f6cb3ef
